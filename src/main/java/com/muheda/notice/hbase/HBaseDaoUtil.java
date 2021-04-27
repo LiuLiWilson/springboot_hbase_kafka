@@ -86,7 +86,7 @@ public class HBaseDaoUtil {
      */
     public <T> List<T> queryScan(T obj, Map<String, String> param)throws Exception{
         List<T> objs = new ArrayList<T>();
-        String tableName = getORMTable(obj);
+        String tableName = this.getORMTable(obj);
         if (StringUtils.isBlank(tableName)) {
             return null;
         }

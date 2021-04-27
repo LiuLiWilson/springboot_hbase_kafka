@@ -58,7 +58,7 @@ public class KafkaConsumerConfig {
     }
 
     public ConsumerFactory<String, String> consumerFactory() {
-        return new DefaultKafkaConsumerFactory<>(consumerConfigs());
+        return new DefaultKafkaConsumerFactory<>(this.consumerConfigs());
     }
 
     public Map<String, Object> consumerConfigs() {
@@ -71,7 +71,8 @@ public class KafkaConsumerConfig {
         propsMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         propsMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, autoOffsetReset);
-        return propsMap;
+
+         return propsMap;
     }
 
     @Bean
